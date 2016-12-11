@@ -30,6 +30,7 @@ Dispatch an action as follows:
 
 import { MouseActionCreator } from './actionCreators/MouseActionCreator';
 import { Store } from './Store';
+const { dispatch } = Store;
 ...
 
   static _onMouseMoveOnCanvas(e, isOnCanvas) {
