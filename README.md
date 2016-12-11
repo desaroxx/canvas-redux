@@ -2,6 +2,44 @@
 
 Sample architecture to show the *uni-directional data flow* based on [**Redux**](http://redux.js.org/) for a canvas based component.
 
+# How?
+
+### Access the Store
+
+Attach the `store` object to the rendering loop as follows:
+```javascript
+
+  render() {
+    // attach store to render flow
+    const store = Store.provide();
+
+    // consue store to build view
+    const { mouse } = store;
+    ...
+
+    // loop to call render again and again and again...
+    window.requestAnimationFrame(() => this.render());
+  }
+
+```
+
+### Dispatch Actions
+
+Dispatch an action as follows:
+```javascript
+
+import { MouseActionCreator } from './actionCreators/MouseActionCreator';
+import { Store } from './Store';
+...
+
+  static _onMouseMoveOnCanvas(e, isOnCanvas) {
+    e.stopPropagation();
+    const position = { x: e.offsetX, y: e.offsetY };
+    dispatch(MouseActionCreator.mouseMove(position)); // <- dispatch action
+  }
+
+```
+
 # Run App
 
 **To run:**
