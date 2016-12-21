@@ -1,3 +1,4 @@
+import { Events } from './Events';
 import { MouseReducer } from './reducers/MouseReducer';
 
 const store = {
@@ -12,6 +13,8 @@ export class Store {
 
   static dispatch(action) {
     store.mouse = MouseReducer.reduce(store.mouse, action);
+
+    Events.emit('RENDER_REQUEST');
   }
 
 }
