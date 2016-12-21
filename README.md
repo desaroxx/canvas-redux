@@ -1,3 +1,8 @@
+# Demo
+
+![dec-11-2016 19-27-12](https://cloud.githubusercontent.com/assets/1498400/21082245/efa4e290-bfd7-11e6-9e51-1beea408418c.gif)
+
+
 # What?
 
 Sample architecture to show the *uni-directional data flow* based on [**Redux**](http://redux.js.org/) for a canvas based component.
@@ -59,3 +64,4 @@ $ npm run build
 ```
 
 The build is bundled into `/bundle.js`.
+
